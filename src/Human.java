@@ -188,12 +188,14 @@ public class Human extends Player {
         //a function to ensure that all entries are integers within bounds
         if (hsc.hasNextInt()) {
             int w = hsc.nextInt();
-            if (w <= 1 || w >= 11)  {
+            if (w >= 1 && w <= 10) {
+                num = w - 1;
+            } else {
                 System.out.println("That didn't work. Please try again -- make sure your entry is a number between one and ten.");
                 return coordinateHandling(num);
             }
-            num = w;
         } else {
+            String oops = hsc.next();
             System.out.println("That didn't work. Please try again -- make sure your entry is a number between one and ten.");
             return coordinateHandling(num);
         }
